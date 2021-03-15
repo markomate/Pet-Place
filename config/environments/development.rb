@@ -76,4 +76,21 @@ Rails.application.configure do
 
   # Configure actionmailer default url for devise
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  
+  # Show errors
+  config.action_mailer.raise_delivery_errors = true
+
+  # Devise email config variables
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :domain => "mail.google.com",
+    :user_name => ENV["mailer_email"],
+    :password => ENV["mailer_password"],
+    :authentication => :plain,
+    :enable_starttls_auto => true,
+    :openssl_verify_mode => 'none'
+  }
 end
