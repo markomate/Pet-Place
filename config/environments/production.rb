@@ -119,7 +119,7 @@ Rails.application.configure do
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
   # Configure actionmailer default url for devise
-  config.action_mailer.default_url_options = { host: 'markos-pet-place.herokuapp.com', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'markos-pet-place.herokuapp.com'}
   
   # Show errors
   config.action_mailer.raise_delivery_errors = true
