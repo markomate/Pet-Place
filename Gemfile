@@ -60,3 +60,4 @@ gem 'devise'
 
 # Figaro for development password encryption
 gem "figaro"
+gem "aws-sdk-s3", "~> 1.91"
