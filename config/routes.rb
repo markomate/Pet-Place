@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   
   resources :listings
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :profiles
 
   devise_for :users, controllers: { registrations: "registrations" }

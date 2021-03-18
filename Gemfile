@@ -66,7 +66,7 @@ gem "figaro"
 gem "aws-sdk-s3", "~> 1.91"
 
 # Admin gem
-gem 'rails_admin', '~> 2.0'
+# gem 'rails_admin', '~> 2.0'
 
 # Authorization gem
 gem 'cancancan'
