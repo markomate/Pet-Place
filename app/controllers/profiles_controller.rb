@@ -17,7 +17,8 @@ class ProfilesController < ApplicationController
     if Profile.exists?(:user_id => current_user.id)
       redirect_to '/', notice: "Your permissions do not allow access to this page"
     else
-      @profile = Profile.new
+      @profile = current_user.build_profile
+      # @profile = Profile.new
     end
   end
 
