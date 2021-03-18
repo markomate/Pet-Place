@@ -57,7 +57,17 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Devise for authentication
 gem 'devise'
+gem 'devise_custom_authenticatable'
 
 # Figaro for development password encryption
 gem "figaro"
+
+# AWS
 gem "aws-sdk-s3", "~> 1.91"
+
+# Admin gem
+gem 'rails_admin', '~> 2.0'
+
+# Authorization gem
+gem 'cancancan'
+
