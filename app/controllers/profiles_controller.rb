@@ -1,7 +1,5 @@
 class ProfilesController < ApplicationController
-  load_and_authorize_resource
   before_action :set_profile, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!
 
   # GET /profiles or /profiles.json
   def index
@@ -14,21 +12,11 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/new
   def new
-    if Profile.exists?(:user_id => current_user.id)
-      redirect_to '/', notice: "Your permissions do not allow access to this page"
-    else
-      @profile = current_user.build_profile
-      # @profile = Profile.new
-    end
+    @profile = Profile.new
   end
 
   # GET /profiles/1/edit
   def edit
-    # # if current_user != @profile.user
-    #   redirect_to '/', notice: "Your permissions do not allow access to this page"
-    # else
-    #   # Render the view
-    # end
   end
 
   # POST /profiles or /profiles.json
@@ -78,5 +66,4 @@ class ProfilesController < ApplicationController
     def profile_params
       params.require(:profile).permit(:user_id, :name, :dob, :contact, :location)
     end
-     
 end
